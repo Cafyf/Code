@@ -20,6 +20,12 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
+
+    - script: |
+        java -version
+        javac -version
+      displayName: 'Check Java Version'
+
     - task: Maven@4
       displayName: Build Project
       inputs:
@@ -33,9 +39,11 @@ stages:
         sonarQubeRunAnalysis: false
 
     - task: Docker@2
-      displayName: Build an image
+      displayName: Build and Push Docker Image
       inputs:
         containerRegistry: 'docker image'
         repository: 'prasannasurya12/cafyf-code-galaxy-service'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
+        tags: |
+          $(Build.BuildId)
