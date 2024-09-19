@@ -46,4 +46,4 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
-          $(Build.BuildId)
+           43
