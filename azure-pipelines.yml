@@ -52,7 +52,7 @@ stages:
       # Step to publish artifacts
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/dc-glx-services'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/dc-glx-services-dummy'
         ArtifactName: 'dc-glx-services'
         publishLocation: 'Container'
       displayName: 'Publish Artifacts' 
