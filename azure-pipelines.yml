@@ -3,13 +3,11 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- main
+- develop
+- feature*
 
 resources:
 - repo: self
-
-variables:
-  tag: '$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -37,6 +35,12 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
+        
+          # Step to copy files to ArtifactStagingDirectory
+    - script: |
+        mkdir -p $(Build.ArtifactStagingDirectory)/dc-glx-services
+        cp -R dist/* $(Build.ArtifactStagingDirectory)/dc-glx-galaxy/
+      displayName: 'Copy files to Artifact Staging Directory'
 
     - task: Docker@2
       displayName: Build and Push Docker Image
