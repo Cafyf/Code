@@ -38,16 +38,7 @@ stages:
         
           # Step to copy files to ArtifactStagingDirectory
     - script: |
-        mkdir -p $(Build.ArtifactStagingDirectory)/dc-glx-services
-        cp -R dist/* $(Build.ArtifactStagingDirectory)/dc-glx-galaxy/
-      displayName: 'Copy files to Artifact Staging Directory'
-
-    - task: Docker@2
-      displayName: Build and Push Docker Image
-      inputs:
-        containerRegistry: 'docker image'
-        repository: 'prasannasurya12/cafyf-code-galaxy-service'
-        command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
-        tags: |
-           43
+        mkdir -p $(Build.ArtifactStagingDirectory)/dc-glx-services/target  # Create target directory in staging
+        cp target/*.jar $(Build.ArtifactStagingDirectory)/dc-glx-services/target/app.jar  # Copy JAR dynamically
+        cp Dockerfile $(Build.ArtifactStagingDirectory)/dc-glx-services/Dockerfile  # Ensure the Dockerfile is copied
+       displayName: 'Copy JAR and Dockerfile to Artifact Staging Directory'
