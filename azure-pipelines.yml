@@ -45,7 +45,8 @@ stages:
 
     - script: |
           # Save the Docker image to a tar file
-          mkdir $(Build.ArtifactStagingDirectory)/dc-glx-services/
+          docker images
+          mkdir -p $(Build.ArtifactStagingDirectory)/dc-glx-services/
           docker save prasannasurya12/cafyf-code-galaxy-service:latest -o $(Build.ArtifactStagingDirectory)/dc-glx-services/cafyf-code-galaxy-service.tar
       displayName: 'Save Docker Image to Artifact Staging Directory'
 
