@@ -41,4 +41,4 @@ stages:
         mkdir -p $(Build.ArtifactStagingDirectory)/dc-glx-services/target  # Create target directory in staging
         cp target/*.jar $(Build.ArtifactStagingDirectory)/dc-glx-services/target/app.jar  # Copy JAR dynamically
         cp Dockerfile $(Build.ArtifactStagingDirectory)/dc-glx-services/Dockerfile  # Ensure the Dockerfile is copied
-       displayName: 'Copy JAR and Dockerfile to Artifact Staging Directory'
+        displayName: 'Copy JAR and Dockerfile to Artifact Staging Directory'
