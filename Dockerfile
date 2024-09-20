@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /application
 
 # Copy the JAR file to the container
-COPY target/app.jar /application/
+COPY target/springboot-backend-0.0.1-SNAPSHOT.jar /application/app.jar
 
 # Expose the port that the Spring Boot app listens on
 EXPOSE 8080
