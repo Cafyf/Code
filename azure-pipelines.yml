@@ -43,3 +43,10 @@ stages:
         cp $(Build.SourcesDirectory)/target/*.jar $(Build.ArtifactStagingDirectory)/dc-glx-services/target/app.jar  # Copy JAR dynamically
         cp $(Build.SourcesDirectory)/Dockerfile $(Build.ArtifactStagingDirectory)/dc-glx-services/Dockerfile  # Ensure the Dockerfile is copied
       displayName: 'Copy JAR and Dockerfile to Artifact Staging Directory'
+# Step to publish artifacts
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/dc-glx-services'
+        ArtifactName: 'cd-glx-services-artifact'
+        publishLocation: 'Container'
+      displayName: 'Publish Artifacts' 
