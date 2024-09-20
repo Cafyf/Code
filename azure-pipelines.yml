@@ -41,7 +41,7 @@ stages:
         repository: 'prasannasurya12/cafyf-code-galaxy-service'
         command: 'build'
         Dockerfile: '**/Dockerfile'
-        tags: 'lastest'
+        tags: 'latest'
 
     - script: |
           # Save the Docker image to a tar file
