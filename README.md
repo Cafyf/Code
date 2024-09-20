@@ -37,4 +37,4 @@ The User Progress Management System is a web application designed to enhance the
 - **Rapid Development**: Spring Boot’s features facilitate quick iterations and updates, allowing for continuous improvement based on user feedback.
 
 ## Conclusion
-The User Progress Management System for the online coding platform represents a modern approach to enhancing the coding experience. By leveraging Spring Boot and Docker, the application offers a reliable, scalable, and user-friendly solution for managing coding challenges, executing code, and validating user submissions.
+The User Progress Management System for the online coding platform represents a modern approach to enhancing the coding experience. By leveraging Spring Boot and Docker, the application offers a reliable, scalable, and user-friendly solution for managing coding challenges, executing code, and validating user submissions. 
