@@ -1,11 +1,11 @@
 # Use an official OpenJDK image as the base image
-FROM openjdk:17-jdk
+FROM openjdk:17-jdk-slim
 
 # Set the working directory inside the container
 WORKDIR /application
 
 # Copy the JAR file to the container
-COPY target/springboot-backend-0.0.1-SNAPSHOT.jar /application/app.jar
+COPY target/app.jar /application/
 
 # Expose the port that the Spring Boot app listens on
 EXPOSE 8080
