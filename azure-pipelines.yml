@@ -41,18 +41,18 @@ stages:
         repository: 'prasannasurya12/cafyf-code-galaxy-service'
         command: 'build'
         Dockerfile: '**/Dockerfile'
-        tags: '43'
+        tags: 'latest'
 
     - script: |
           # Save the Docker image to a tar file
           mkdir -p $(Build.ArtifactStagingDirectory)/dc-glx-services-dummy
-          docker save prasannasurya12/cafyf-code-galaxy-service:43 -o $(Build.ArtifactStagingDirectory)/dc-glx-services-dummy/cafyf-code-galaxy-service.tar
+          docker save prasannasurya12/cafyf-code-galaxy-service:latest -o $(Build.ArtifactStagingDirectory)/dc-glx-services-dummy/cafyf-code-galaxy-service.tar
       displayName: 'Save Docker Image to Artifact Staging Directory'
 
       # Step to publish artifacts
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)/dc-glx-services-dummy'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/dc-glx-services'
         ArtifactName: 'dc-glx-services'
         publishLocation: 'Container'
       displayName: 'Publish Artifacts' 
