@@ -29,7 +29,7 @@ The User Progress Management System is a web application designed to enhance the
 
 ### Database Integration
 - Integrates with [specify database, e.g., PostgreSQL or MongoDB] to manage user data, code submissions, and progress metrics effectively.
-
+ 
 ## Benefits
 - **Enhanced User Experience**: By providing real-time feedback and progress tracking, users can improve their coding skills more effectively.
 - **Portability**: The use of Docker allows for easy deployment and management of the application on any platform supporting Docker.
