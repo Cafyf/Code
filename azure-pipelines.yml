@@ -3,8 +3,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
-- develop
-- feature*
+   - develop
+   - maintenance
+
+pr:
+  - develop
+  - maintenance
 
 resources:
 - repo: self
@@ -56,3 +60,5 @@ stages:
         ArtifactName: 'dc-glx-services'
         publishLocation: 'Container'
       displayName: 'Publish Artifacts' 
+      condition: eq(variables['Build.SourceBranch'], 'refs/heads/develop')
+   # As of now dev branch on only have the capability to produce artifacts
